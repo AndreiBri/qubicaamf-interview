@@ -9,13 +9,9 @@ const Card = ({ product }: CardProps) => {
   return (
     <Link
       to={`/product/${product.id}`}
-      className="flex flex-col h-full w-full max-w-md mx-auto rounded overflow-hidden shadow-lg text-inherit no-underline transition-shadow hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+      className="flex flex-col h-full w-full max-w-md mx-auto rounded overflow-hidden shadow-lg text-inherit no-underline transition-shadow hover:shadow-xl focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-gray-900"
     >
-      <img
-        className="w-full h-48 object-contain bg-white"
-        src={product.image}
-        alt={product.title}
-      />
+      <img className="w-full h-48 object-contain bg-white" src={product.image} alt={product.title} />
       <div className="px-6 py-4 flex-1">
         <div className="font-bold text-xl mb-2 line-clamp-2">{product.title}</div>
         <p className="text-gray-700 text-base line-clamp-3">{product.description}</p>
