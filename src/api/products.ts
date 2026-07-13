@@ -23,13 +23,23 @@ export async function getCategories(): Promise<string[]> {
 
 // GET Products by Category
 export async function getProductsByCategory(category: string): Promise<Product[]> {
-  const res = await fetch(
-    `https://fakestoreapi.com/products/category/${encodeURIComponent(category)}`,
-  );
+  const res = await fetch(`https://fakestoreapi.com/products/category/${encodeURIComponent(category)}`);
 
   if (!res.ok) {
     throw new Error(`Errore nel recupero prodotti per categoria: ${res.status}`);
   }
 
   return res.json();
+}
+
+// GET Product id for product detail page
+export async function getProductById(id: string): Promise<Product> {
+  const res = await fetch(`https://fakestoreapi.com/products/${id}`);
+
+  if (!res.ok) throw new Error(`Errore nel recupero prodotto: ${res.status}`);
+
+  const text = await res.text();
+  if (!text) throw new Error("Prodotto non trovato");
+
+  return JSON.parse(text);
 }
