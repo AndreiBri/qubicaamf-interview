@@ -1,32 +1,55 @@
-# React + TypeScript + Vite
+# ShopStore
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+E-commerce web app sviluppata come challenge tecnica: mostra prodotti, categorie e dettaglio prodotto usando la [Fake Store API](https://fakestoreapi.com/docs).
 
-Currently, two official plugins are available:
+## Stack tecnico
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19 + TypeScript
+- Vite
+- React Router
+- Tailwind CSS
+- Oxlint
 
-## React Compiler
+## Prerequisiti
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js 20 o superiore
+- npm
 
-## Expanding the Oxlint configuration
+## Setup locale
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+1. Clona il repository:
+   ```bash
+   git clone https://github.com/AndreiBri/qubicaamf-interview.git
+   cd qubicaamf-interview
+   ```
+2. Installa le dipendenze:
+   ```bash
+   npm install
+   ```
+3. Avvia il server di sviluppo:
+   ```bash
+   npm run dev
+   ```
+   L'app sarà disponibile su `http://localhost:5173`.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+Non sono necessarie variabili d'ambiente: l'app consuma direttamente la Fake Store API pubblica.
+
+## Struttura del progetto
+
+```
+src/
+├── api/           # Chiamate alla Fake Store API (prodotti, categorie)
+├── components/    # Componenti UI riutilizzabili (Header, Navbar, Card, Spinner)
+├── pages/         # Viste routate (Home, ProductDetail)
+├── types/         # Tipi TypeScript condivisi (es. Product)
+├── App.tsx        # Layout globale (Header + routing) e definizione delle rotte
+└── main.tsx       # Entry point dell'app
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Script disponibili
+
+| Comando       | Descrizione                                |
+| ------------- | ------------------------------------------ |
+| `npm run dev` | Avvia il server di sviluppo con hot reload |
+
+## Uso di strumenti AI
