@@ -8,6 +8,7 @@ E-commerce web app sviluppata come challenge tecnica: mostra prodotti, categorie
 - Vite
 - React Router
 - Tailwind CSS
+- lucide-react (icone)
 - Oxlint
 
 ## Prerequisiti
@@ -54,3 +55,5 @@ src/
 | `npm run dev` | Avvia il server di sviluppo con hot reload |
 
 ## Uso di strumenti AI
+
+Durante lo sviluppo ho usato Claude Code (Anthropic) come supporto per capire pattern che non conoscevo (React Context, gestione immutabile dello stato, TypeScript) e per fare code review mentre scrivevo. Ho scritto io la maggior parte del codice, con l'AI che spiegava i concetti e segnalava errori; per pochi elementi puramente ripetitivi (icone SVG) ho fatto scrivere il codice direttamente. Ho validato tutto testando manualmente ogni funzionalità in locale (login/logout, aggiunta al carrello, filtro categorie, persistenza dopo refresh).
