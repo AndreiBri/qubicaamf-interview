@@ -16,7 +16,9 @@ const Navbar = () => {
 
   const linkClassName = (isActive: boolean) =>
     `inline-block whitespace-nowrap rounded-full px-3 py-1 text-sm font-medium capitalize ${
-      isActive ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+      isActive
+        ? "bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900"
+        : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
     }`;
 
   return (
@@ -27,7 +29,7 @@ const Navbar = () => {
         aria-expanded={isOpen}
         aria-controls="category-menu"
         aria-label={isOpen ? "Chiudi menu categorie" : "Apri menu categorie"}
-        className="rounded p-2 text-gray-700 hover:bg-gray-100 sm:hidden"
+        className="rounded p-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-800 sm:hidden"
       >
         {isOpen ? (
           <svg
