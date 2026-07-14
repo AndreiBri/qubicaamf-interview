@@ -53,28 +53,28 @@ const ProductDetail = () => {
 
   return (
     <section className="max-w-4xl mx-auto p-4 mt-8">
-      <Link to="/" className="inline-block mb-6 text-gray-700 hover:text-gray-900 hover:underline">
+      <Link to="/" className="inline-block mb-6 text-gray-700 hover:text-gray-900 hover:underline dark:text-gray-300 dark:hover:text-white">
         &larr; Torna alla lista
       </Link>
       <div className="flex flex-col md:flex-row gap-8">
-        <div className="md:w-1/2 flex items-center justify-center bg-white rounded shadow-lg p-6">
+        <div className="md:w-1/2 flex items-center justify-center bg-white dark:bg-gray-900 rounded shadow-lg p-6">
           <img src={product.image} alt={product.title} className="max-h-80 w-full object-contain" />
         </div>
         <div className="md:w-1/2 flex flex-col">
-          <span className="inline-block self-start bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mb-3 capitalize">
+          <span className="inline-block self-start bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mb-3 capitalize dark:bg-gray-800 dark:text-gray-200">
             {product.category}
           </span>
-          <h1 className="text-3xl font-bold mb-3">{product.title}</h1>
-          <p className="text-2xl font-semibold mb-4">{product.price} €</p>
-          <p className="text-gray-700 mb-4">{product.description}</p>
+          <h1 className="text-3xl font-bold mb-3 dark:text-white">{product.title}</h1>
+          <p className="text-2xl font-semibold mb-4 dark:text-white">{product.price} €</p>
+          <p className="text-gray-700 mb-4 dark:text-gray-300">{product.description}</p>
           <button
             type="button"
             onClick={handleAddToCart}
-            className="self-start bg-gray-900 text-white rounded px-6 py-2 mr-4 font-medium hover:bg-gray-800 mb-4"
+            className="self-start bg-gray-900 text-white rounded px-6 py-2 mr-4 font-medium hover:bg-gray-800 mb-4 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
           >
             {added ? "Aggiunto ✓" : "Aggiungi al carrello"}
           </button>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             &#9733; {product.rating.rate} ({product.rating.count} recensioni)
           </p>
         </div>
