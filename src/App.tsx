@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
 import { AuthProvider } from "./context/AuthContext";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/login" element={<LoginPage />} />
           </Routes>
         </main>
       </AuthProvider>
