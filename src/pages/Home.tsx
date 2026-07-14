@@ -41,7 +41,7 @@ const Home = () => {
 
   return (
     <>
-      <h1 className="text-center my-8 text-5xl">My Project ShopStore</h1>
+      <h1 className="text-center my-8 text-5xl dark:text-white">My Project ShopStore</h1>
       <section aria-label={category ? `Prodotti della categoria ${category}` : "Tutti i prodotti"}>
         <ul className="grid list-none text-center items-stretch grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mx-auto max-w-6xl p-4 mt-8">
           {products.map((product) => (
