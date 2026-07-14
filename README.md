@@ -38,11 +38,12 @@ Non sono necessarie variabili d'ambiente: l'app consuma direttamente la Fake Sto
 
 ```
 src/
-├── api/           # Chiamate alla Fake Store API (prodotti, categorie)
+├── api/           # Chiamate alla Fake Store API (prodotti, categorie, login)
 ├── components/    # Componenti UI riutilizzabili (Header, Navbar, Card, Spinner)
-├── pages/         # Viste routate (Home, ProductDetail)
-├── types/         # Tipi TypeScript condivisi (es. Product)
-├── App.tsx        # Layout globale (Header + routing) e definizione delle rotte
+├── context/       # React Context per stato globale (Auth, Cart, Theme)
+├── pages/         # Viste routate (Home, ProductDetail, LoginPage, CartPage)
+├── types/         # Tipi TypeScript condivisi (Product, Auth, Cart, Theme)
+├── App.tsx        # Layout globale (Header + Provider + routing) e definizione delle rotte
 └── main.tsx       # Entry point dell'app
 ```
 
