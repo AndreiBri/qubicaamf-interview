@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import { ShoppingCart } from "lucide-react";
 import Navbar from "./Navbar";
 import { useAuth } from "../context/AuthContext";
+import { useCart } from "../context/CartContext";
 
 const Header = () => {
   const { isAuthenticated, username, logout } = useAuth();
+  const { totalCount } = useCart();
 
   return (
     <header className="sticky top-0 z-10 bg-white shadow">
@@ -13,6 +16,14 @@ const Header = () => {
         </Link>
         <Navbar />
         <div className="flex items-center gap-3">
+          <Link to="/cart" aria-label="Vai al carrello" className="relative rounded p-2 text-gray-700 hover:bg-gray-100">
+            <ShoppingCart className="h-6 w-6" aria-hidden="true" />
+            {totalCount > 0 && (
+              <span className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-gray-900 px-1 text-xs font-semibold text-white">
+                {totalCount}
+              </span>
+            )}
+          </Link>
           {isAuthenticated ? (
             <>
               <span className="text-sm text-gray-700">Ciao, {username}</span>
